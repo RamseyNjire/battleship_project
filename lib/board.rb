@@ -9,5 +9,7 @@ class Board
     @grid[position[0]][position[1]]
   end
 
-  
+  def []=(position, value)
+    @grid[position[0]][position[1]] = value
+  end
 end
