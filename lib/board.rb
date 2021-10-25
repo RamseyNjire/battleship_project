@@ -12,4 +12,10 @@ class Board
   def []=(position, value)
     @grid[position[0]][position[1]] = value
   end
+
+  def num_ships
+    @grid.reduce(0) do |sum, array|
+        sum + array.count{ |element| element == :S }
+    end
+  end
 end
