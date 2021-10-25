@@ -4,4 +4,10 @@ class Board
     @grid = Array.new(length){ Array.new(length, :N) }
     @size = length * length
   end
+
+  def [](position)
+    @grid[position[0]][position[1]]
+  end
+
+  
 end
