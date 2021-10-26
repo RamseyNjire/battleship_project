@@ -1,3 +1,4 @@
+require "byebug"
 class Board
     attr_reader :size
     def initialize(length)
@@ -29,4 +30,26 @@ class Board
             false
         end
     end
+
+    def place_random_ships
+        quarter = @size.fdiv(4).floor.to_i
+        
+        length = Math.sqrt(@size).to_i
+
+        positions_array = []
+
+        quarter.times do
+            position = [rand(length - 1), rand(length - 1)]
+            while positions_array.include?(position)
+                position = [rand(length - 1), rand(length - 1)]
+            end
+
+            positions_array << position
+        end
+        positions_array.each { |position| self[position] = :S }
+    end
 end
+
+# board = Board.new(10)
+
+# puts board.place_random_ships
