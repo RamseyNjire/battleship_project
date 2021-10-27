@@ -64,4 +64,8 @@ class Board
     def hidden_ships_grid
         @grid.map { |row| row.map { |element| element == :S ? :N : element } }
     end
+
+    def cheat
+        Board.print_grid(@grid)
+    end
 end
