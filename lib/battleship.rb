@@ -14,4 +14,25 @@ class Battleship
         puts "There are #{@board.num_ships} ships on the board"
         @board.print
     end
+
+    def lose?
+        if @remaining_misses <= 0
+            puts "You lose!"
+            return true
+        else
+            false
+        end
+    end
+
+    def win?
+        if @board.num_ships == 0
+            puts "You win!"
+            return true
+        else
+            false
+        end
+    end
+
+    def game_over?
+    end
 end
