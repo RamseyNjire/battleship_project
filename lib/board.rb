@@ -1,6 +1,18 @@
 require "byebug"
 class Board
     attr_reader :size
+
+    def self.print_grid(grid)
+        length = grid.size
+        grid.flatten.each_with_index do |element, index|
+            if index % length == length - 1
+                puts element
+            else
+                print "#{element} "
+            end
+        end
+    end
+
     def initialize(length)
         @grid = Array.new(length){ Array.new(length, :N) }
         @size = length * length
