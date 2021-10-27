@@ -48,8 +48,8 @@ class Board
         end
         positions_array.each { |position| self[position] = :S }
     end
+
+    def hidden_ships_grid
+        @grid.map { |row| row.map { |element| element == :S ? :N : element } }
+    end
 end
-
-# board = Board.new(10)
-
-# puts board.place_random_ships
